@@ -15,14 +15,13 @@ export default {
   <div>
     <nav-bar />
 
-    <div class="container section">
-      <div class="columns">
-        <div class="column is-8">
-          <slot />
-        </div>
-
-        <div class="column is-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
           <side-bar />
+        </div>
+        <div class="col-sm-10">
+          <slot />
         </div>
       </div>
     </div>

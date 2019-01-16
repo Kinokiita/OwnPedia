@@ -1,20 +1,22 @@
 <template>
   <div class="section">
-    <p v-if="loading" class="notification is-info">
-      Loading
-    </p>
+    <div v-if="loading" class="notification is-info">
+      <div class="spinner"></div>
+    </div>
 
     <template v-else>
       <h1 class="title">Welcome to my Stories</h1>
 
-      <article v-for="post in posts" :key="post.id" class="box">
-        <h2 class="title is-3">
-          <router-link :to="{name: 'post', params: {id: post.id}}">{{ post.title }}</router-link>
-        </h2>
-        <div class="content">
-          {{ post.body }}
-        </div>
-      </article>
+      <div class="row">
+      <div v-for="post in posts" :key="post.id" class="card large">
+            <h2 class="title is-3">
+              <router-link :to="{name: 'post', params: {id: post.id}}">{{ post.title  | truncate(10, '...') }}</router-link>
+            </h2>
+            <p class="content">
+              {{ post.body | truncate(150, '...') }}
+            </p>
+          </div>
+      </div>
     </template>
   </div>
 </template>

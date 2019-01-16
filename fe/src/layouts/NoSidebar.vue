@@ -13,7 +13,11 @@ export default {
   <div>
     <Navbar />
     <div class="container">
-        <slot />
+      <div class="row">
+        <div class="col-sm-12">
+          <slot />
+        </div>
+      </div>
     </div>
     <Footer />
   </div>

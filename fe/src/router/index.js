@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import mincss from "mini.css";
 
 Vue.use(Router);
 
@@ -22,6 +23,12 @@ export default new Router({
       path: "/story/:id",
       name: "post",
       component: () => import("@/pages/Post.vue")
+    },
+    {
+      path: "/terms-of-service",
+      name: "TermsOfService",
+      meta: { layout: "no-sidebar" },
+      component: () => import("@/pages/TermsOfService.vue")
     },
     {
       path: "*",
